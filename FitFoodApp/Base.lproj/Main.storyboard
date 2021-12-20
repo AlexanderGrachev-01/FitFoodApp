@@ -65,11 +65,71 @@
                         <outlet property="PhoneNumberTextField" destination="SZl-EE-jz6" id="o7d-gE-XSo"/>
                         <outlet property="logoImageView" destination="xaK-nT-McU" id="fxT-LJ-Erf"/>
                         <outlet property="sendCodeButton" destination="dGx-Cf-Tp8" id="kXI-uU-4QM"/>
+                        <segue destination="USM-8p-Fcg" kind="show" id="qMH-04-PHf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="35" y="98"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="x7J-ht-i1j">
+            <objects>
+                <viewController id="USM-8p-Fcg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OZ3-1P-2mI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ab7-rt-oTm">
+                                <rect key="frame" x="57" y="196" width="300" height="450"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LOGO" translatesAutoresizingMaskIntoConstraints="NO" id="MmR-hD-SNb">
+                                        <rect key="frame" x="10" y="80" width="280" height="156"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="156" id="8uF-dl-EAv"/>
+                                            <constraint firstAttribute="width" constant="280" id="Qi1-SN-LzV"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EEe-UN-2dQ">
+                                        <rect key="frame" x="10" y="256" width="280" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="Vem-9C-Flt"/>
+                                            <constraint firstAttribute="height" constant="40" id="W1W-sN-GnT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zfl-sw-hqU">
+                                        <rect key="frame" x="94" y="316" width="112" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Confirm code"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="7sc-XL-B37"/>
+                                    <constraint firstItem="Zfl-sw-hqU" firstAttribute="centerX" secondItem="ab7-rt-oTm" secondAttribute="centerX" id="EBx-LF-s4b"/>
+                                    <constraint firstItem="MmR-hD-SNb" firstAttribute="top" secondItem="ab7-rt-oTm" secondAttribute="top" constant="80" id="GDH-fq-5kz"/>
+                                    <constraint firstAttribute="height" constant="450" id="GdL-gP-7XX"/>
+                                    <constraint firstItem="EEe-UN-2dQ" firstAttribute="centerX" secondItem="ab7-rt-oTm" secondAttribute="centerX" id="HgO-hP-JRQ"/>
+                                    <constraint firstItem="MmR-hD-SNb" firstAttribute="centerX" secondItem="ab7-rt-oTm" secondAttribute="centerX" id="cBK-lG-uhI"/>
+                                    <constraint firstItem="Zfl-sw-hqU" firstAttribute="top" secondItem="EEe-UN-2dQ" secondAttribute="bottom" constant="20" id="ndk-zT-Jsh"/>
+                                    <constraint firstItem="EEe-UN-2dQ" firstAttribute="top" secondItem="MmR-hD-SNb" secondAttribute="bottom" constant="20" id="oBS-uV-oII"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="epO-oG-ucg"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstItem="ab7-rt-oTm" firstAttribute="centerY" secondItem="OZ3-1P-2mI" secondAttribute="centerY" id="6FC-WM-eMX"/>
+                            <constraint firstItem="ab7-rt-oTm" firstAttribute="centerX" secondItem="OZ3-1P-2mI" secondAttribute="centerX" id="KvJ-CI-HvN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ToP-9o-saN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pjU-tO-oeK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="825" y="98"/>
         </scene>
     </scenes>
     <resources>
