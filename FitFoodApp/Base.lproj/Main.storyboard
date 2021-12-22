@@ -323,6 +323,9 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="177" height="100"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                                <connections>
+                                                                    <action selector="addBreakfast:" destination="Uwc-Uo-3JZ" eventType="touchUpInside" id="ASR-kv-sAN"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
@@ -358,6 +361,9 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="177" height="100"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                                <connections>
+                                                                    <action selector="addLunch:" destination="Uwc-Uo-3JZ" eventType="touchUpInside" id="nkc-RU-xi5"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
@@ -401,6 +407,9 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="177" height="100"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                                <connections>
+                                                                    <action selector="addDiner:" destination="Uwc-Uo-3JZ" eventType="touchUpInside" id="JNO-FD-3R5"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
@@ -436,6 +445,9 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="177" height="100"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                                <connections>
+                                                                    <action selector="addSnacks:" destination="Uwc-Uo-3JZ" eventType="touchUpInside" id="KfL-Ls-dg9"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
@@ -515,10 +527,10 @@
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="1143.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Find FoodVC-->
         <scene sceneID="CKf-Pp-U0I">
             <objects>
-                <viewController id="id7-gk-NR4" sceneMemberID="viewController">
+                <viewController id="id7-gk-NR4" customClass="FindFoodVC" customModule="FitFoodApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vWC-jU-Ilp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -536,7 +548,23 @@
                                 <buttonConfiguration key="configuration" style="plain" title="&lt;&lt;">
                                     <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="backFromList:" destination="id7-gk-NR4" eventType="touchUpInside" id="32j-nB-JHZ"/>
+                                </connections>
                             </button>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="X4c-Y8-AZX">
+                                <rect key="frame" x="20" y="114" width="374" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="WCI-qn-qzw"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's find your food" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fR-dq-448">
+                                <rect key="frame" x="115.5" y="59" width="183" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="916-ev-qe8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -544,8 +572,13 @@
                             <constraint firstItem="0wg-U4-ugM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yHO-l1-F6R" secondAttribute="trailing" constant="8" symbolic="YES" id="2qH-Us-EYv"/>
                             <constraint firstItem="yHO-l1-F6R" firstAttribute="leading" secondItem="916-ev-qe8" secondAttribute="leading" constant="20" id="CIo-zO-a9H"/>
                             <constraint firstItem="0wg-U4-ugM" firstAttribute="top" secondItem="916-ev-qe8" secondAttribute="top" id="DEA-bv-cvd"/>
+                            <constraint firstItem="X4c-Y8-AZX" firstAttribute="top" secondItem="0wg-U4-ugM" secondAttribute="bottom" constant="20" id="FAN-c3-5Uo"/>
+                            <constraint firstItem="5fR-dq-448" firstAttribute="centerX" secondItem="vWC-jU-Ilp" secondAttribute="centerX" id="L7y-te-yfP"/>
                             <constraint firstItem="yHO-l1-F6R" firstAttribute="top" secondItem="916-ev-qe8" secondAttribute="top" constant="10" id="OVc-0Y-Vby"/>
                             <constraint firstItem="916-ev-qe8" firstAttribute="trailing" secondItem="0wg-U4-ugM" secondAttribute="trailing" constant="20" id="QH4-yr-upO"/>
+                            <constraint firstItem="916-ev-qe8" firstAttribute="trailing" secondItem="X4c-Y8-AZX" secondAttribute="trailing" constant="20" id="Trl-Hd-iIt"/>
+                            <constraint firstItem="X4c-Y8-AZX" firstAttribute="leading" secondItem="916-ev-qe8" secondAttribute="leading" constant="20" id="VS5-HP-us2"/>
+                            <constraint firstItem="5fR-dq-448" firstAttribute="top" secondItem="916-ev-qe8" secondAttribute="top" constant="15" id="uNZ-5B-jpm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6oW-lV-DTi"/>
@@ -555,7 +588,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LpV-CA-a64" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="1870"/>
+            <point key="canvasLocation" x="34.782608695652179" y="1869.6428571428571"/>
         </scene>
         <!--ProfileVC-->
         <scene sceneID="BMg-Ot-o97">

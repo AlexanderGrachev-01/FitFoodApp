@@ -33,6 +33,22 @@ class MainPageVC: UIViewController {
         performSegue(withIdentifier: "goToProfile", sender: nil)
     }
     
+    @IBAction func addBreakfast(_ sender: Any) {
+        performSegue(withIdentifier: "addSomeFood", sender: nil)
+    }
+    
+    @IBAction func addLunch(_ sender: Any) {
+        performSegue(withIdentifier: "addSomeFood", sender: nil)
+    }
+    
+    @IBAction func addDiner(_ sender: Any) {
+        performSegue(withIdentifier: "addSomeFood", sender: nil)
+    }
+    
+    @IBAction func addSnacks(_ sender: Any) {
+        performSegue(withIdentifier: "addSomeFood", sender: nil)
+    }
+    
     
     
     
