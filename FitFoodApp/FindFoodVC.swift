@@ -16,4 +16,8 @@ class FindFoodVC: UIViewController {
     @IBAction func backFromList(_ sender: Any) {
         performSegue(withIdentifier: "goBackFromFoodList", sender: nil)
     }
+    
+    @IBAction func goToFoodInfo(_ sender: Any) {
+        performSegue(withIdentifier: "goToFoodInfo", sender: nil)
+    }
 }
