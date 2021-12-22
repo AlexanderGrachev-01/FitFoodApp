@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E0p-bB-Bht">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Uwc-Uo-3JZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -276,6 +276,9 @@
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="openProfile:" destination="Uwc-Uo-3JZ" eventType="touchUpInside" id="GeX-GR-N9h"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -490,6 +493,7 @@
                             <constraint firstItem="F13-cE-7wx" firstAttribute="bottom" secondItem="z8c-HZ-Mri" secondAttribute="bottom" id="mVz-P8-Tx5"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="fVZ-Qf-FQb"/>
                     <connections>
                         <outlet property="addBreakfastView" destination="7L3-wc-aBV" id="7r2-oN-awY"/>
                         <outlet property="addDinerView" destination="LyV-u6-GTd" id="fkg-cu-3rN"/>
@@ -503,11 +507,55 @@
                         <outlet property="kcalsWindowView" destination="I9c-d0-2hE" id="Gu1-LV-YG3"/>
                         <outlet property="proteinCounterLabel" destination="a8h-Lf-X0k" id="Tm8-xH-mSO"/>
                         <outlet property="proteinWindowView" destination="hX5-mI-eB2" id="Jpq-GC-hcg"/>
+                        <segue destination="E0p-bB-Bht" kind="modal" identifier="goToProfile" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="pE5-Hc-2cQ"/>
+                        <segue destination="id7-gk-NR4" kind="modal" identifier="addSomeFood" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="uHS-Cm-yQD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaE-Wh-hxZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="1143.75"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CKf-Pp-U0I">
+            <objects>
+                <viewController id="id7-gk-NR4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vWC-jU-Ilp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0wg-U4-ugM">
+                                <rect key="frame" x="344" y="44" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="cLc-lg-lqf"/>
+                                    <constraint firstAttribute="width" constant="50" id="oQA-L0-xNo"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHO-l1-F6R">
+                                <rect key="frame" x="20" y="54" width="42" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="&lt;&lt;">
+                                    <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="916-ev-qe8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0wg-U4-ugM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yHO-l1-F6R" secondAttribute="trailing" constant="8" symbolic="YES" id="2qH-Us-EYv"/>
+                            <constraint firstItem="yHO-l1-F6R" firstAttribute="leading" secondItem="916-ev-qe8" secondAttribute="leading" constant="20" id="CIo-zO-a9H"/>
+                            <constraint firstItem="0wg-U4-ugM" firstAttribute="top" secondItem="916-ev-qe8" secondAttribute="top" id="DEA-bv-cvd"/>
+                            <constraint firstItem="yHO-l1-F6R" firstAttribute="top" secondItem="916-ev-qe8" secondAttribute="top" constant="10" id="OVc-0Y-Vby"/>
+                            <constraint firstItem="916-ev-qe8" firstAttribute="trailing" secondItem="0wg-U4-ugM" secondAttribute="trailing" constant="20" id="QH4-yr-upO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6oW-lV-DTi"/>
+                    <connections>
+                        <segue destination="Uwc-Uo-3JZ" kind="modal" identifier="goBackFromFoodList" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="v0d-4E-D76"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LpV-CA-a64" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35" y="1870"/>
         </scene>
         <!--ProfileVC-->
         <scene sceneID="BMg-Ot-o97">
@@ -534,6 +582,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="&lt;&lt;">
                                     <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="backFromProfile:" destination="E0p-bB-Bht" eventType="touchUpInside" id="CD3-yz-iG8"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcy-fj-EF9">
                                 <rect key="frame" x="78" y="49" width="258" height="36"/>
@@ -557,6 +608,9 @@
                                             <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="baseBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="setUsername:" destination="E0p-bB-Bht" eventType="touchUpInside" id="F7G-F4-2fq"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Username" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZJU-GZ-M6p">
                                         <rect key="frame" x="200" y="13" width="110" height="34"/>
@@ -595,6 +649,9 @@
                                             <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="baseBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="setUserHeight:" destination="E0p-bB-Bht" eventType="touchUpInside" id="3K5-zV-syx"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="180" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qf4-tc-W18">
                                         <rect key="frame" x="264" y="13" width="46" height="34"/>
@@ -633,6 +690,9 @@
                                             <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="baseBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="setUserAge:" destination="E0p-bB-Bht" eventType="touchUpInside" id="gQh-zl-e4H"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="20" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q9c-zb-oAZ">
                                         <rect key="frame" x="264" y="13" width="46" height="34"/>
@@ -671,6 +731,9 @@
                                             <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <color key="baseBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="setUserWeight:" destination="E0p-bB-Bht" eventType="touchUpInside" id="WEP-SX-Wia"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="80" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nUp-HQ-eeL">
                                         <rect key="frame" x="264" y="13" width="46" height="34"/>
@@ -720,12 +783,24 @@
                             <constraint firstItem="Tgw-xj-hdf" firstAttribute="trailing" secondItem="U7Z-jP-7DC" secondAttribute="trailing" constant="20" id="zcn-mZ-JdQ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Zis-jl-xHA"/>
+                    <connections>
+                        <outlet property="ageTextField" destination="Q9c-zb-oAZ" id="KQJ-xZ-K5H"/>
+                        <outlet property="heightTextField" destination="Qf4-tc-W18" id="k1f-8w-B6R"/>
+                        <outlet property="userNameLabel" destination="Kcy-fj-EF9" id="0hP-X5-NoL"/>
+                        <outlet property="usernameTextField" destination="ZJU-GZ-M6p" id="waw-9w-6XM"/>
+                        <outlet property="weightTextField" destination="nUp-HQ-eeL" id="NsR-QZ-ARl"/>
+                        <segue destination="Uwc-Uo-3JZ" kind="modal" identifier="goBackFromProfile" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Tv4-wr-fID"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yfe-MZ-U6z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="824.63768115942037" y="1143.75"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="v0d-4E-D76"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="LOGO" width="555" height="155"/>
         <image name="userIcon" width="512" height="512"/>

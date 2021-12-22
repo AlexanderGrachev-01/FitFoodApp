@@ -29,6 +29,9 @@ class MainPageVC: UIViewController {
         changingTheAppearance()
     }
     
+    @IBAction func openProfile(_ sender: Any) {
+        performSegue(withIdentifier: "goToProfile", sender: nil)
+    }
     
     
     
