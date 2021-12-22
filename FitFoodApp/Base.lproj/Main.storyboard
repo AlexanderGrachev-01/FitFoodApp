@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="35" y="98"/>
         </scene>
-        <!--View Controller-->
+        <!--CodeVC-->
         <scene sceneID="x7J-ht-i1j">
             <objects>
-                <viewController id="USM-8p-Fcg" sceneMemberID="viewController">
+                <viewController id="USM-8p-Fcg" customClass="SMSCodeVC" customModule="FitFoodApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OZ3-1P-2mI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="825" y="98"/>
         </scene>
-        <!--View Controller-->
+        <!--Main PageVC-->
         <scene sceneID="et6-W3-yn6">
             <objects>
-                <viewController id="Uwc-Uo-3JZ" sceneMemberID="viewController">
+                <viewController id="Uwc-Uo-3JZ" customClass="MainPageVC" customModule="FitFoodApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iSW-aO-m82">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -465,6 +465,20 @@
                             <constraint firstItem="F13-cE-7wx" firstAttribute="bottom" secondItem="z8c-HZ-Mri" secondAttribute="bottom" id="mVz-P8-Tx5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addBreakfastView" destination="7L3-wc-aBV" id="7r2-oN-awY"/>
+                        <outlet property="addDinerView" destination="LyV-u6-GTd" id="fkg-cu-3rN"/>
+                        <outlet property="addLunchView" destination="qdj-Rr-mce" id="Qtt-dD-JHJ"/>
+                        <outlet property="addSnacksView" destination="nos-YC-ua0" id="ruq-VT-INl"/>
+                        <outlet property="carbsCounterLabel" destination="0Uv-aQ-JFT" id="E97-VY-Wsh"/>
+                        <outlet property="carbsWindowView" destination="nWn-yd-qpK" id="wDz-5Y-wjr"/>
+                        <outlet property="fatCounterLabel" destination="SWK-Xc-XPt" id="Q1r-GC-HKh"/>
+                        <outlet property="fatWindowView" destination="zFh-ds-Bc4" id="aPv-lP-cug"/>
+                        <outlet property="kcalCounterLabel" destination="hDW-6r-tg9" id="cG5-uq-5lv"/>
+                        <outlet property="kcalsWindowView" destination="I9c-d0-2hE" id="Gu1-LV-YG3"/>
+                        <outlet property="proteinCounterLabel" destination="a8h-Lf-X0k" id="Tm8-xH-mSO"/>
+                        <outlet property="proteinWindowView" destination="hX5-mI-eB2" id="Jpq-GC-hcg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaE-Wh-hxZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
