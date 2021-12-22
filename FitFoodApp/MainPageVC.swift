@@ -22,10 +22,41 @@ class MainPageVC: UIViewController {
     @IBOutlet weak var addDinerView: UIView!
     @IBOutlet weak var addSnacksView: UIView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        changingTheAppearance()
     }
     
     
     
+    
+    
+    
+    func changingTheAppearance() {
+        
+        let viewBW: CGFloat = 1
+        let buttonBW: CGFloat = 2
+        let cornR: CGFloat = 10
+        
+        kcalsWindowView.layer.borderWidth = viewBW
+        carbsWindowView.layer.borderWidth = viewBW
+        proteinWindowView.layer.borderWidth = viewBW
+        fatWindowView.layer.borderWidth = viewBW
+        
+        addBreakfastView .layer.borderWidth = buttonBW
+        addLunchView.layer.borderWidth = buttonBW
+        addDinerView.layer.borderWidth = buttonBW
+        addSnacksView.layer.borderWidth = buttonBW
+        
+        kcalsWindowView.layer.cornerRadius = 100
+        carbsWindowView.layer.cornerRadius = cornR
+        proteinWindowView.layer.cornerRadius = cornR
+        fatWindowView.layer.cornerRadius = cornR
+        addBreakfastView.layer.cornerRadius = cornR
+        addLunchView.layer.cornerRadius = cornR
+        addDinerView.layer.cornerRadius = cornR
+        addSnacksView.layer.cornerRadius = cornR
+    }
 }
