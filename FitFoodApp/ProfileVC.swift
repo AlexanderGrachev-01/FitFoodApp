@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ProfileVC: UIViewController {
 
@@ -18,7 +19,6 @@ class ProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     
@@ -28,6 +28,10 @@ class ProfileVC: UIViewController {
     }
     
     @IBAction func logOutButton(_ sender: Any) {
+        try? Auth.auth().signOut()
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "PhoneNumberVC")
+        UIApplication.shared.keyWindow?.rootViewController = vc
     }
     
     @IBAction func setUsername(_ sender: Any) {
