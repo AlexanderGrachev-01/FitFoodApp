@@ -11,6 +11,7 @@
 		1A3A79962773A08400DB649F /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3A79952773A08400DB649F /* ProfileVC.swift */; };
 		1A3E63982773AA02008B3DF8 /* FindFoodVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E63972773AA02008B3DF8 /* FindFoodVC.swift */; };
 		1A3E639A2773B030008B3DF8 /* FoodInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E63992773B030008B3DF8 /* FoodInfoVC.swift */; };
+		1A3E639C2774D1A7008B3DF8 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A3E639B2774D1A7008B3DF8 /* AuthManager.swift */; };
 		1A81B7B727712C0000F3718E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A81B7B627712C0000F3718E /* AppDelegate.swift */; };
 		1A81B7B927712C0000F3718E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A81B7B827712C0000F3718E /* SceneDelegate.swift */; };
 		1A81B7BB27712C0000F3718E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A81B7BA27712C0000F3718E /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 		1A3A79952773A08400DB649F /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		1A3E63972773AA02008B3DF8 /* FindFoodVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindFoodVC.swift; sourceTree = "<group>"; };
 		1A3E63992773B030008B3DF8 /* FoodInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodInfoVC.swift; sourceTree = "<group>"; };
+		1A3E639B2774D1A7008B3DF8 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		1A81B7B327712C0000F3718E /* FitFoodApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitFoodApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A81B7B627712C0000F3718E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A81B7B827712C0000F3718E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		1A81B7D227712DBF00F3718E /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				1A3E639B2774D1A7008B3DF8 /* AuthManager.swift */,
 				1A81B7CC27712D7000F3718E /* PhoneNumberVC.swift */,
 				1A81B7D027712DB300F3718E /* SMSCodeVC.swift */,
 			);
@@ -245,6 +248,7 @@
 				1A3E63982773AA02008B3DF8 /* FindFoodVC.swift in Sources */,
 				1A81B7CD27712D7000F3718E /* PhoneNumberVC.swift in Sources */,
 				1A81B7B927712C0000F3718E /* SceneDelegate.swift in Sources */,
+				1A3E639C2774D1A7008B3DF8 /* AuthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
