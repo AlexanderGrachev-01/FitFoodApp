@@ -15,6 +15,9 @@ protocol AuthProtocol: AnyObject {
 }
 
 final class AuthManager: AuthProtocol {
+    
+    static let shared: AuthProtocol = AuthManager()
+    
     var verificationID: String?
 
     func verifyPhone(_ phoneNumber: String, completion: @escaping (Bool) -> Void) {

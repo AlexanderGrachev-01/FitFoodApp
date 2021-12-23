@@ -21,8 +21,13 @@ class ProfileVC: UIViewController {
         
     }
     
+    
+    
     @IBAction func backFromProfile(_ sender: Any) {
         performSegue(withIdentifier: "goBackFromProfile", sender: nil)
+    }
+    
+    @IBAction func logOutButton(_ sender: Any) {
     }
     
     @IBAction func setUsername(_ sender: Any) {
