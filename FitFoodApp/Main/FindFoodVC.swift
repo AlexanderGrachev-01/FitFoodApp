@@ -16,7 +16,6 @@ final class FindFoodVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        foodTableView.register(UITableViewCell.self, forCellReuseIdentifier: "FoodCellID")
         FirestoreManager.shared.getFoodItems { [weak self] items in
             guard let self = self else { return }
             self.items = items
@@ -43,8 +42,9 @@ extension FindFoodVC: UITableViewDelegate, UITableViewDataSource {
         items.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FoodCellID", for: indexPath)
-        cell.textLabel?.text = items[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FoodCellID") as! FoodTableViewCell
+        cell.foodNameLabel.text = items[indexPath.row].name
+        cell.foodKcalLabel.text = items[indexPath.row].kcal + " kcal"
         return cell
     }
 }

@@ -13,11 +13,14 @@ struct UserInfo {
     var height: String
     var age: String
     var weight: String
+    let kcal: String
+    let carbs: String
 }
 
 struct FoodItem {
     let name: String
     let kcal: String
+    let carbs: String
     let protein: String
     let fat: String
 }
@@ -67,16 +70,18 @@ final class FirestoreManager: FirestoreProtocol {
             let items: [FoodItem] = snapshot.documents.compactMap { snap in
                 if let name: String = snap.data()["name"] as? String,
                    let kcal: String = snap.data()["kcal"] as? String,
+                   let carbs: String = snap.data()["carbs"] as? String,
                    let protein: String = snap.data()["protein"] as? String,
                    let fat: String = snap.data()["fat"] as? String {
                     return FoodItem(
                         name: name,
                         kcal: kcal,
+                        carbs: carbs,
                         protein: protein,
                         fat: fat
                     )
                 } else {
-                    return FoodItem.init(name: "", kcal: "", protein: "", fat: "")
+                    return FoodItem.init(name: "", kcal: "", carbs: "", protein: "", fat: "")
                 }
             }
             completion(items)

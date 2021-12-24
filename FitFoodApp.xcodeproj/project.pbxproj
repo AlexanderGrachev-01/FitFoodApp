@@ -22,6 +22,7 @@
 		1A81B7D127712DB300F3718E /* SMSCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A81B7D027712DB300F3718E /* SMSCodeVC.swift */; };
 		1A81B7D4277132A900F3718E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1A81B7D3277132A900F3718E /* GoogleService-Info.plist */; };
 		1AFC06C827753839008505B7 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC06C727753838008505B7 /* FirestoreManager.swift */; };
+		1AFC06CA2775D4BB008505B7 /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFC06C92775D4BB008505B7 /* FoodTableViewCell.swift */; };
 		53F1894E7EC6B22AD5E16B79 /* Pods_FitFoodApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2D53AAFB6BCD66681D6D240 /* Pods_FitFoodApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		1A81B7D027712DB300F3718E /* SMSCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMSCodeVC.swift; sourceTree = "<group>"; };
 		1A81B7D3277132A900F3718E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1AFC06C727753838008505B7 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		1AFC06C92775D4BB008505B7 /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
 		45B5CA285EF6999C8011C48F /* Pods-FitFoodApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitFoodApp.release.xcconfig"; path = "Target Support Files/Pods-FitFoodApp/Pods-FitFoodApp.release.xcconfig"; sourceTree = "<group>"; };
 		95CEC14549F639AD160083A0 /* Pods-FitFoodApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitFoodApp.debug.xcconfig"; path = "Target Support Files/Pods-FitFoodApp/Pods-FitFoodApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A2D53AAFB6BCD66681D6D240 /* Pods_FitFoodApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitFoodApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +114,7 @@
 				1A3A799327737DC800DB649F /* MainPageVC.swift */,
 				1A3A79952773A08400DB649F /* ProfileVC.swift */,
 				1A3E63972773AA02008B3DF8 /* FindFoodVC.swift */,
+				1AFC06C92775D4BB008505B7 /* FoodTableViewCell.swift */,
 				1A3E63992773B030008B3DF8 /* FoodInfoVC.swift */,
 			);
 			path = Main;
@@ -255,6 +258,7 @@
 				1A81B7BB27712C0000F3718E /* ViewController.swift in Sources */,
 				1A3A79962773A08400DB649F /* ProfileVC.swift in Sources */,
 				1A81B7D127712DB300F3718E /* SMSCodeVC.swift in Sources */,
+				1AFC06CA2775D4BB008505B7 /* FoodTableViewCell.swift in Sources */,
 				1A81B7B727712C0000F3718E /* AppDelegate.swift in Sources */,
 				1A3E63982773AA02008B3DF8 /* FindFoodVC.swift in Sources */,
 				1A81B7CD27712D7000F3718E /* PhoneNumberVC.swift in Sources */,

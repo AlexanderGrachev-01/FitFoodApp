@@ -572,6 +572,41 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Jkg-aW-zpZ">
                                 <rect key="frame" x="20" y="158" width="374" height="704"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoodCellID" id="B8Q-Tm-NqB" customClass="FoodTableViewCell" customModule="FitFoodApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B8Q-Tm-NqB" id="NLU-Gg-q0h">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2f-eF-Xap">
+                                                    <rect key="frame" x="20" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wve-MV-yo7">
+                                                    <rect key="frame" x="312" y="11.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="a2f-eF-Xap" firstAttribute="centerY" secondItem="NLU-Gg-q0h" secondAttribute="centerY" id="X1d-t8-Wn7"/>
+                                                <constraint firstItem="wve-MV-yo7" firstAttribute="centerY" secondItem="NLU-Gg-q0h" secondAttribute="centerY" id="XIO-Bz-NhC"/>
+                                                <constraint firstItem="a2f-eF-Xap" firstAttribute="leading" secondItem="NLU-Gg-q0h" secondAttribute="leadingMargin" id="hSt-7e-gh5"/>
+                                                <constraint firstItem="wve-MV-yo7" firstAttribute="trailing" secondItem="NLU-Gg-q0h" secondAttribute="trailingMargin" id="p3R-sz-Efu"/>
+                                                <constraint firstItem="wve-MV-yo7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="a2f-eF-Xap" secondAttribute="trailing" constant="8" symbolic="YES" id="wD5-0E-YOU"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="foodKcalLabel" destination="wve-MV-yo7" id="oJj-ru-dZ0"/>
+                                            <outlet property="foodNameLabel" destination="a2f-eF-Xap" id="peQ-Gf-2F6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RzF-6H-vbK">
                                 <rect key="frame" x="315" y="831" width="79" height="31"/>
