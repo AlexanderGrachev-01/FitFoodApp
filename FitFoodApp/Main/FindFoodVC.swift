@@ -9,6 +9,12 @@ import UIKit
 
 final class FindFoodVC: UIViewController {
     
+    var selectedFood = FoodItem(name: "",
+                                kcal: "",
+                                carbs: "",
+                                protein: "",
+                                fat: "")
+    
     @IBOutlet weak var foodSearchBar: UISearchBar!
     @IBOutlet weak var foodTableView: UITableView!
     
@@ -25,6 +31,12 @@ final class FindFoodVC: UIViewController {
         }
         foodTableView.delegate = self
         foodTableView.dataSource = self
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? FoodInfoVC {
+            vc.foodInfo = selectedFood
+        }
     }
     
     @IBAction func backFromList(_ sender: Any) {
@@ -46,7 +58,7 @@ extension FindFoodVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        selectedFood = items[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "showFoodInfo", sender: nil)
     }
