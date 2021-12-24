@@ -569,6 +569,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Jkg-aW-zpZ">
+                                <rect key="frame" x="20" y="158" width="374" height="704"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RzF-6H-vbK">
                                 <rect key="frame" x="315" y="831" width="79" height="31"/>
                                 <state key="normal" title="Button"/>
@@ -584,22 +588,28 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="0wg-U4-ugM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yHO-l1-F6R" secondAttribute="trailing" constant="8" symbolic="YES" id="2qH-Us-EYv"/>
+                            <constraint firstItem="916-ev-qe8" firstAttribute="trailing" secondItem="Jkg-aW-zpZ" secondAttribute="trailing" constant="20" id="9R8-o1-1qd"/>
                             <constraint firstItem="yHO-l1-F6R" firstAttribute="leading" secondItem="916-ev-qe8" secondAttribute="leading" constant="20" id="CIo-zO-a9H"/>
                             <constraint firstItem="0wg-U4-ugM" firstAttribute="top" secondItem="916-ev-qe8" secondAttribute="top" id="DEA-bv-cvd"/>
                             <constraint firstItem="X4c-Y8-AZX" firstAttribute="top" secondItem="0wg-U4-ugM" secondAttribute="bottom" constant="20" id="FAN-c3-5Uo"/>
+                            <constraint firstItem="Jkg-aW-zpZ" firstAttribute="leading" secondItem="916-ev-qe8" secondAttribute="leading" constant="20" id="FBZ-nF-SVg"/>
                             <constraint firstItem="RzF-6H-vbK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="916-ev-qe8" secondAttribute="leading" symbolic="YES" id="GWE-Kl-Svc"/>
                             <constraint firstItem="5fR-dq-448" firstAttribute="centerX" secondItem="vWC-jU-Ilp" secondAttribute="centerX" id="L7y-te-yfP"/>
                             <constraint firstItem="yHO-l1-F6R" firstAttribute="top" secondItem="916-ev-qe8" secondAttribute="top" constant="10" id="OVc-0Y-Vby"/>
                             <constraint firstItem="916-ev-qe8" firstAttribute="trailing" secondItem="0wg-U4-ugM" secondAttribute="trailing" constant="20" id="QH4-yr-upO"/>
                             <constraint firstItem="916-ev-qe8" firstAttribute="trailing" secondItem="X4c-Y8-AZX" secondAttribute="trailing" constant="20" id="Trl-Hd-iIt"/>
                             <constraint firstItem="X4c-Y8-AZX" firstAttribute="leading" secondItem="916-ev-qe8" secondAttribute="leading" constant="20" id="VS5-HP-us2"/>
+                            <constraint firstItem="Jkg-aW-zpZ" firstAttribute="top" secondItem="X4c-Y8-AZX" secondAttribute="bottom" id="Yy7-U8-17o"/>
                             <constraint firstItem="RzF-6H-vbK" firstAttribute="bottom" secondItem="916-ev-qe8" secondAttribute="bottom" id="djd-bM-HxB"/>
+                            <constraint firstItem="Jkg-aW-zpZ" firstAttribute="bottom" secondItem="916-ev-qe8" secondAttribute="bottom" id="jhr-XX-iLG"/>
                             <constraint firstItem="916-ev-qe8" firstAttribute="trailing" secondItem="RzF-6H-vbK" secondAttribute="trailing" constant="20" id="sqv-fM-4oB"/>
                             <constraint firstItem="5fR-dq-448" firstAttribute="top" secondItem="916-ev-qe8" secondAttribute="top" constant="15" id="uNZ-5B-jpm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6oW-lV-DTi"/>
                     <connections>
+                        <outlet property="foodSearchBar" destination="X4c-Y8-AZX" id="eVP-bJ-FIV"/>
+                        <outlet property="foodTableView" destination="Jkg-aW-zpZ" id="aZ1-IE-Eng"/>
                         <segue destination="Uwc-Uo-3JZ" kind="modal" identifier="goBackFromFoodList" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="v0d-4E-D76"/>
                         <segue destination="ADU-fC-cnn" kind="modal" identifier="goToFoodInfo" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="rQQ-f5-9Mb"/>
                     </connections>
@@ -1102,7 +1112,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Tv4-wr-fID"/>
+        <segue reference="v0d-4E-D76"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="LOGO" width="555" height="155"/>

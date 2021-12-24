@@ -1,0 +1,50 @@
+//
+//  FindFoodVC.swift
+//  FitFoodApp
+//
+//  Created by Александр Грачев on 22.12.2021.
+//
+
+import UIKit
+
+final class FindFoodVC: UIViewController {
+    
+    @IBOutlet weak var foodSearchBar: UISearchBar!
+    @IBOutlet weak var foodTableView: UITableView!
+    
+    private var items: [FoodItem] = []
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        foodTableView.register(UITableViewCell.self, forCellReuseIdentifier: "FoodCellID")
+        FirestoreManager.shared.getFoodItems { [weak self] items in
+            guard let self = self else { return }
+            self.items = items
+            DispatchQueue.main.async {
+                self.foodTableView.reloadData()
+            }
+        }
+        foodTableView.delegate = self
+        foodTableView.dataSource = self
+    }
+    
+    @IBAction func backFromList(_ sender: Any) {
+        performSegue(withIdentifier: "goBackFromFoodList", sender: nil)
+    }
+    
+    @IBAction func goToFoodInfo(_ sender: Any) {
+        performSegue(withIdentifier: "goToFoodInfo", sender: nil)
+    }
+}
+
+extension FindFoodVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        items.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FoodCellID", for: indexPath)
+        cell.textLabel?.text = items[indexPath.row].name
+        return cell
+    }
+}
