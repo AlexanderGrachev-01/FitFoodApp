@@ -8,15 +8,6 @@
 import Foundation
 import FirebaseFirestore
 
-struct UserInfo {
-    var name: String
-    var height: String
-    var age: String
-    var weight: String
-    let kcal: String
-    let carbs: String
-}
-
 struct FoodItem {
     let name: String
     let kcal: String

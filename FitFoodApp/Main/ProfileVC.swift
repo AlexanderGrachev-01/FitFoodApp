@@ -19,6 +19,15 @@ class ProfileVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        userNameLabel.text = UserInfo.name
+        usernameTextField.text = UserInfo.name
+        heightTextField.text = UserInfo.height
+        ageTextField.text = UserInfo.age
+        weightTextField.text = UserInfo.weight
+        
+        heightTextField.delegate = self
+        ageTextField.delegate = self
+        weightTextField.delegate = self
     }
     
     
@@ -35,15 +44,27 @@ class ProfileVC: UIViewController {
     }
     
     @IBAction func setUsername(_ sender: Any) {
-        userNameLabel.text = usernameTextField.text
+        UserInfo.name = usernameTextField.text
+        userNameLabel.text = UserInfo.name
     }
     
     @IBAction func setUserHeight(_ sender: Any) {
+        UserInfo.height = weightTextField.text
     }
     
     @IBAction func setUserAge(_ sender: Any) {
+        UserInfo.age = ageTextField.text
     }
     
     @IBAction func setUserWeight(_ sender: Any) {
+        UserInfo.weight = weightTextField.text
+    }
+}
+
+extension ProfileVC: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let allowedCharacters = CharacterSet.decimalDigits
+        let characterSet = CharacterSet(charactersIn: string)
+        return allowedCharacters.isSuperset(of: characterSet)
     }
 }
