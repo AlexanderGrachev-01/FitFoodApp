@@ -30,10 +30,6 @@ final class FindFoodVC: UIViewController {
     @IBAction func backFromList(_ sender: Any) {
         performSegue(withIdentifier: "goBackFromFoodList", sender: nil)
     }
-    
-    @IBAction func goToFoodInfo(_ sender: Any) {
-        performSegue(withIdentifier: "goToFoodInfo", sender: nil)
-    }
 }
 
 extension FindFoodVC: UITableViewDelegate, UITableViewDataSource {
@@ -41,10 +37,17 @@ extension FindFoodVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         items.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoodCellID") as! FoodTableViewCell
         cell.foodNameLabel.text = items[indexPath.row].name
         cell.foodKcalLabel.text = items[indexPath.row].kcal + " kcal"
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "showFoodInfo", sender: nil)
     }
 }

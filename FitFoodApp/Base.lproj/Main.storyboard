@@ -604,7 +604,6 @@
                                         <connections>
                                             <outlet property="foodKcalLabel" destination="wve-MV-yo7" id="oJj-ru-dZ0"/>
                                             <outlet property="foodNameLabel" destination="a2f-eF-Xap" id="peQ-Gf-2F6"/>
-                                            <segue destination="ADU-fC-cnn" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="MPl-oz-K5N"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -634,6 +633,7 @@
                         <outlet property="foodSearchBar" destination="X4c-Y8-AZX" id="eVP-bJ-FIV"/>
                         <outlet property="foodTableView" destination="Jkg-aW-zpZ" id="aZ1-IE-Eng"/>
                         <segue destination="Uwc-Uo-3JZ" kind="modal" identifier="goBackFromFoodList" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="v0d-4E-D76"/>
+                        <segue destination="ADU-fC-cnn" kind="modal" identifier="showFoodInfo" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="bpR-D1-krt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LpV-CA-a64" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1134,8 +1134,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="bpR-D1-krt"/>
         <segue reference="glR-dM-1Jl"/>
-        <segue reference="2EG-1k-zeI"/>
+        <segue reference="v0d-4E-D76"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="LOGO" width="555" height="155"/>
