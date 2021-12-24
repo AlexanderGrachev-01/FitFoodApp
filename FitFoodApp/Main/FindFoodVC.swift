@@ -27,12 +27,15 @@ final class FindFoodVC: UIViewController {
         FirestoreManager.shared.getFoodItems { [weak self] items in
             guard let self = self else { return }
             self.items = items
+            self.filteredItems = items
             DispatchQueue.main.async {
                 self.foodTableView.reloadData()
             }
         }
+        filteredItems = items
         foodTableView.delegate = self
         foodTableView.dataSource = self
+        foodSearchBar.delegate = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -49,13 +52,13 @@ final class FindFoodVC: UIViewController {
 extension FindFoodVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        items.count
+        filteredItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoodCellID") as! FoodTableViewCell
-        cell.foodNameLabel.text = items[indexPath.row].name
-        cell.foodKcalLabel.text = items[indexPath.row].kcal + " kcal"
+        cell.foodNameLabel.text = filteredItems[indexPath.row].name
+        cell.foodKcalLabel.text = filteredItems[indexPath.row].kcal + " kcal"
         return cell
     }
     
@@ -63,5 +66,23 @@ extension FindFoodVC: UITableViewDelegate, UITableViewDataSource {
         selectedFood = items[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "showFoodInfo", sender: nil)
+    }
+}
+
+extension FindFoodVC: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredItems = []
+        
+        if searchText == "" {
+            filteredItems = items
+        }
+        
+        for food in items {
+            if food.name.uppercased().contains(searchText.uppercased()) {
+                filteredItems.append(food)
+            }
+        }
+        
+        self.foodTableView.reloadData()
     }
 }
