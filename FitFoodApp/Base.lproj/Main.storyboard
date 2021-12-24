@@ -809,6 +809,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" smartInsertDeleteType="no"/>
+                                <connections>
+                                    <action selector="gramChanged:" destination="ADU-fC-cnn" eventType="editingChanged" id="3z2-SG-wp1"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yrg-EP-aq0">
                                 <rect key="frame" x="182" y="506" width="50" height="31"/>
@@ -816,6 +819,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Add">
                                     <color key="baseForegroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="addFoodAndGoOut:" destination="ADU-fC-cnn" eventType="touchUpInside" id="asE-sP-Ph8"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KCAL (result)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkZ-Z3-N27">
                                 <rect key="frame" x="28" y="402" width="126.5" height="27"/>
@@ -878,6 +884,7 @@
                         <outlet property="foodKcalLabel" destination="9l7-rs-xO1" id="4BC-l5-QU0"/>
                         <outlet property="foodNameLabel" destination="dud-TT-dmh" id="PMF-i9-t1C"/>
                         <outlet property="foodProteinLabel" destination="Pnu-8z-uh8" id="G0m-Eg-nxD"/>
+                        <outlet property="gramTextField" destination="rRp-7W-EeZ" id="HZF-Ej-S3V"/>
                         <outlet property="resultCkalLabel" destination="WIV-xU-MAi" id="tqM-6a-en8"/>
                         <segue destination="Uwc-Uo-3JZ" kind="modal" identifier="goBackFromFoodInfo" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="2EG-1k-zeI"/>
                         <segue destination="id7-gk-NR4" kind="modal" identifier="backToFoodList" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="glR-dM-1Jl"/>

@@ -21,6 +21,8 @@ class FoodInfoVC: UIViewController {
     @IBOutlet weak var foodProteinLabel: UILabel!
     @IBOutlet weak var foodFatLabel: UILabel!
     @IBOutlet weak var resultCkalLabel: UILabel!
+    @IBOutlet weak var gramTextField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +32,31 @@ class FoodInfoVC: UIViewController {
         foodCarbsLabel.text = foodInfo.carbs
         foodProteinLabel.text = foodInfo.protein
         foodFatLabel.text = foodInfo.fat
+        
+        gramTextField?.delegate = self
     }
-    @IBAction func goToMainFromFoodinfo(_ sender: Any) {
+    
+    @IBAction func gramChanged(_ sender: Any) {
+        resultCkalLabel.text = gramTextField.text
+    }
+    
+        @IBAction func goToMainFromFoodinfo(_ sender: Any) {
         performSegue(withIdentifier: "backToFoodList", sender: nil)
     }
+    
+    @IBAction func addFoodAndGoOut(_ sender: Any) {
+        performSegue(withIdentifier: "goBackFromFoodInfo", sender: nil)
+    }
+    
+}
+
+
+extension FoodInfoVC: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let allowedCharacters = CharacterSet.decimalDigits
+        let characterSet = CharacterSet(charactersIn: string)
+        return allowedCharacters.isSuperset(of: characterSet)
+    }
+    
+    
 }
