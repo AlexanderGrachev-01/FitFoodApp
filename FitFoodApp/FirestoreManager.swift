@@ -41,7 +41,7 @@ final class FirestoreManager: FirestoreProtocol {
 //            else {
 //                return
 //            }
-//            let userInfo: UserInfo = snapshot.documents.compactMap { snap in
+//            let userInfo: UserInfo = snapshot.documents. { snap in
 //                if let name: String = snap.data()["Name"] as? String,
 //                   let height: String = snap.data()["Height"] as? String,
 //                   let age: String = snap.data()["Age"] as? String,

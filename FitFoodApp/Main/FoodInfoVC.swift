@@ -36,7 +36,17 @@ class FoodInfoVC: UIViewController {
     }
     
     @IBAction func gramChanged(_ sender: Any) {
-        resultCkalLabel.text = gramTextField.text
+        if gramTextField.text != ""
+        {
+            if let kcal_t = foodKcalLabel.text, let gram_t = gramTextField.text {
+                let kcal = Double(kcal_t)!
+                let gram = Double(gram_t)!
+                let res = kcal * gram / 100
+                resultCkalLabel.text = String(res)
+            }
+        } else {
+            resultCkalLabel.text = "..."
+        }
     }
     
         @IBAction func goToMainFromFoodinfo(_ sender: Any) {
