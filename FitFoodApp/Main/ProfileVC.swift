@@ -49,7 +49,7 @@ class ProfileVC: UIViewController {
     }
     
     @IBAction func setUserHeight(_ sender: Any) {
-        UserInfo.height = weightTextField.text
+        UserInfo.height = heightTextField.text
     }
     
     @IBAction func setUserAge(_ sender: Any) {

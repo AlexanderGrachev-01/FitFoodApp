@@ -36,7 +36,7 @@ final class UserInfo {
         }
     }
     
-    static var height: String! {
+    static var height: String!{
         get {
             return UserDefaults.standard.string(forKey: UserKeys.userHeight.rawValue)
         } set {
@@ -155,4 +155,6 @@ final class UserInfo {
             }
         }
     }
+    
+    
 }

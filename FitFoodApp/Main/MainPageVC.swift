@@ -27,6 +27,13 @@ class MainPageVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         changingTheAppearance()
+        
+        if UserInfo.carbs == nil { UserInfo.carbs = "0g" }
+            carbsCounterLabel.text = UserInfo.carbs
+        if UserInfo.protein == nil { UserInfo.protein = "0g" }
+            proteinCounterLabel.text = UserInfo.protein
+        if UserInfo.fat == nil { UserInfo.fat = "0g" }
+            fatCounterLabel.text = UserInfo.fat
     }
     
     @IBAction func openProfile(_ sender: Any) {
