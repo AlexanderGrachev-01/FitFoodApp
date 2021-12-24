@@ -14,6 +14,6 @@ class FoodInfoVC: UIViewController {
 
     }
     @IBAction func goToMainFromFoodinfo(_ sender: Any) {
-        performSegue(withIdentifier: "goBackFromFoodInfo", sender: nil)
+        performSegue(withIdentifier: "backToFoodList", sender: nil)
     }
 }
