@@ -32,7 +32,6 @@ class FoodInfoVC: UIViewController {
         foodCarbsLabel.text = foodInfo.carbs
         foodProteinLabel.text = foodInfo.protein
         foodFatLabel.text = foodInfo.fat
-        
         gramTextField?.delegate = self
     }
     
@@ -45,7 +44,9 @@ class FoodInfoVC: UIViewController {
     }
     
     @IBAction func addFoodAndGoOut(_ sender: Any) {
-        performSegue(withIdentifier: "goBackFromFoodInfo", sender: nil)
+        if gramTextField.text != nil && gramTextField.text != "" {
+            performSegue(withIdentifier: "goBackFromFoodInfo", sender: nil)
+        }
     }
     
 }

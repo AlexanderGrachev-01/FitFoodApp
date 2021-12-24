@@ -15,10 +15,12 @@ final class FindFoodVC: UIViewController {
                                 protein: "",
                                 fat: "")
     
+    
     @IBOutlet weak var foodSearchBar: UISearchBar!
     @IBOutlet weak var foodTableView: UITableView!
     
     private var items: [FoodItem] = []
+    private var filteredItems: [FoodItem] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()

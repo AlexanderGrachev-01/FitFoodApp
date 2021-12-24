@@ -539,13 +539,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0wg-U4-ugM">
-                                <rect key="frame" x="344" y="44" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="cLc-lg-lqf"/>
-                                    <constraint firstAttribute="width" constant="50" id="oQA-L0-xNo"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHO-l1-F6R">
                                 <rect key="frame" x="20" y="54" width="42" height="31"/>
                                 <state key="normal" title="Button"/>
@@ -556,7 +549,7 @@
                                     <action selector="backFromList:" destination="id7-gk-NR4" eventType="touchUpInside" id="32j-nB-JHZ"/>
                                 </connections>
                             </button>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="X4c-Y8-AZX">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="X4c-Y8-AZX">
                                 <rect key="frame" x="20" y="114" width="374" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="WCI-qn-qzw"/>
@@ -612,25 +605,23 @@
                         <viewLayoutGuide key="safeArea" id="916-ev-qe8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="0wg-U4-ugM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yHO-l1-F6R" secondAttribute="trailing" constant="8" symbolic="YES" id="2qH-Us-EYv"/>
+                            <constraint firstItem="X4c-Y8-AZX" firstAttribute="top" secondItem="5fR-dq-448" secondAttribute="bottom" constant="28" id="2HJ-HA-SYs"/>
                             <constraint firstItem="916-ev-qe8" firstAttribute="trailing" secondItem="Jkg-aW-zpZ" secondAttribute="trailing" constant="20" id="9R8-o1-1qd"/>
                             <constraint firstItem="yHO-l1-F6R" firstAttribute="leading" secondItem="916-ev-qe8" secondAttribute="leading" constant="20" id="CIo-zO-a9H"/>
-                            <constraint firstItem="0wg-U4-ugM" firstAttribute="top" secondItem="916-ev-qe8" secondAttribute="top" id="DEA-bv-cvd"/>
-                            <constraint firstItem="X4c-Y8-AZX" firstAttribute="top" secondItem="0wg-U4-ugM" secondAttribute="bottom" constant="20" id="FAN-c3-5Uo"/>
                             <constraint firstItem="Jkg-aW-zpZ" firstAttribute="leading" secondItem="916-ev-qe8" secondAttribute="leading" constant="20" id="FBZ-nF-SVg"/>
                             <constraint firstItem="5fR-dq-448" firstAttribute="centerX" secondItem="vWC-jU-Ilp" secondAttribute="centerX" id="L7y-te-yfP"/>
                             <constraint firstItem="yHO-l1-F6R" firstAttribute="top" secondItem="916-ev-qe8" secondAttribute="top" constant="10" id="OVc-0Y-Vby"/>
-                            <constraint firstItem="916-ev-qe8" firstAttribute="trailing" secondItem="0wg-U4-ugM" secondAttribute="trailing" constant="20" id="QH4-yr-upO"/>
                             <constraint firstItem="916-ev-qe8" firstAttribute="trailing" secondItem="X4c-Y8-AZX" secondAttribute="trailing" constant="20" id="Trl-Hd-iIt"/>
                             <constraint firstItem="X4c-Y8-AZX" firstAttribute="leading" secondItem="916-ev-qe8" secondAttribute="leading" constant="20" id="VS5-HP-us2"/>
                             <constraint firstItem="Jkg-aW-zpZ" firstAttribute="top" secondItem="X4c-Y8-AZX" secondAttribute="bottom" id="Yy7-U8-17o"/>
+                            <constraint firstItem="5fR-dq-448" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="yHO-l1-F6R" secondAttribute="trailing" constant="8" symbolic="YES" id="hLO-aN-72i"/>
                             <constraint firstItem="Jkg-aW-zpZ" firstAttribute="bottom" secondItem="916-ev-qe8" secondAttribute="bottom" id="jhr-XX-iLG"/>
                             <constraint firstItem="5fR-dq-448" firstAttribute="top" secondItem="916-ev-qe8" secondAttribute="top" constant="15" id="uNZ-5B-jpm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6oW-lV-DTi"/>
                     <connections>
-                        <outlet property="foodSearchBar" destination="X4c-Y8-AZX" id="eVP-bJ-FIV"/>
+                        <outlet property="foodSearchBar" destination="X4c-Y8-AZX" id="nu4-v9-bkl"/>
                         <outlet property="foodTableView" destination="Jkg-aW-zpZ" id="aZ1-IE-Eng"/>
                         <segue destination="Uwc-Uo-3JZ" kind="modal" identifier="goBackFromFoodList" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="v0d-4E-D76"/>
                         <segue destination="ADU-fC-cnn" kind="modal" identifier="showFoodInfo" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="bpR-D1-krt"/>
@@ -1147,8 +1138,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="glR-dM-1Jl"/>
-        <segue reference="2EG-1k-zeI"/>
+        <segue reference="uHS-Cm-yQD"/>
+        <segue reference="v0d-4E-D76"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="LOGO" width="555" height="155"/>
