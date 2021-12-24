@@ -31,6 +31,17 @@ class ProfileVC: UIViewController {
     }
     
     
+    @IBAction func clearInfo(_ sender: Any) {
+        UserInfo.name = nil
+        UserInfo.height = nil
+        UserInfo.weight = nil
+        UserInfo.age = nil
+        UserInfo.carbs = nil
+        UserInfo.protein = nil
+        UserInfo.fat = nil
+        UserInfo.kcal = nil
+        UserInfo.kcalSh = nil
+    }
     
     @IBAction func backFromProfile(_ sender: Any) {
         performSegue(withIdentifier: "goBackFromProfile", sender: nil)

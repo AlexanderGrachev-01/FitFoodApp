@@ -55,10 +55,14 @@ class FoodInfoVC: UIViewController {
     
     @IBAction func addFoodAndGoOut(_ sender: Any) {
         if gramTextField.text != nil && gramTextField.text != "" {
+            UserInfo.kcal = String(Double(resultCkalLabel.text ?? "")! + Double(UserInfo.kcal)!)
+//            let gram = Double(gramTextField.text ?? "")!
+//            UserInfo.carbs = String(Double(foodCarbsLabel.text ?? "")! * gram / 100 + Double(UserInfo.carbs)!)
+//            UserInfo.protein = String(Double(foodProteinLabel.text ?? "")! * gram / 100 + Double(UserInfo.protein)!)
+//            UserInfo.fat = String(Double(foodFatLabel.text ?? "")! * gram / 100 + Double(UserInfo.fat)!)
+            }
             performSegue(withIdentifier: "goBackFromFoodInfo", sender: nil)
         }
-    }
-    
 }
 
 

@@ -9,8 +9,8 @@ import UIKit
 
 class MainPageVC: UIViewController {
 
+    @IBOutlet weak var kcalLabel: UILabel!
     @IBOutlet weak var kcalsWindowView: UIView!
-    @IBOutlet weak var kcalCounterLabel: UILabel!
     @IBOutlet weak var carbsWindowView: UIView!
     @IBOutlet weak var carbsCounterLabel: UILabel!
     @IBOutlet weak var proteinWindowView: UIView!
@@ -28,11 +28,14 @@ class MainPageVC: UIViewController {
         super.viewDidLoad()
         changingTheAppearance()
         
-        if UserInfo.carbs == nil { UserInfo.carbs = "0g" }
+        
+        if UserInfo.kcal == nil { UserInfo.kcal = "0" }
+            kcalLabel.text = UserInfo.kcal
+        if UserInfo.carbs == nil { UserInfo.carbs = "0" }
             carbsCounterLabel.text = UserInfo.carbs
-        if UserInfo.protein == nil { UserInfo.protein = "0g" }
+        if UserInfo.protein == nil { UserInfo.protein = "0" }
             proteinCounterLabel.text = UserInfo.protein
-        if UserInfo.fat == nil { UserInfo.fat = "0g" }
+        if UserInfo.fat == nil { UserInfo.fat = "0" }
             fatCounterLabel.text = UserInfo.fat
     }
     
